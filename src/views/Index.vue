@@ -30,7 +30,51 @@
     <article class="container an-content">
       <a-row :gutter="16">
         <a-col :span="18">
-          <div class="bg-white shadow an-content-left">123</div>
+          <div class="bg-white shadow an-content-left">
+            <div class="an-content-left-group-item">
+              <img
+                class="img-fluid"
+                src="https://pc-index-skin.cdn.bcebos.com/hiphoto/66011955477.jpg"
+              />
+              <div class="title">
+                曾经用易语言写过的一些东西
+              </div>
+              <div>
+                <div>
+                  标签：<a-tag color="pink">
+                    pink
+                  </a-tag>
+                  <a-tag color="pink">
+                    pink
+                  </a-tag>
+                  <a-tag color="pink">
+                    pink
+                  </a-tag>
+                  <a-tag color="pink">
+                    pink
+                  </a-tag>
+                  <a-tag color="pink">
+                    pink
+                  </a-tag>
+                  <a-tag color="pink">
+                    pink
+                  </a-tag>
+                  <a-tag color="pink">
+                    pink
+                  </a-tag>
+                  <a-tag color="pink">
+                    pink
+                  </a-tag>
+                  <a-tag color="pink">
+                    pink
+                  </a-tag>
+                </div>
+                <div>
+                  <LoadingOutlined />
+                </div>
+              </div>
+            </div>
+          </div>
         </a-col>
         <a-col :span="6">
           <div class=" an-content-right">
@@ -118,6 +162,21 @@ nav {
 
   .an-content-left {
     min-height: $minHeight;
+    padding: 10px;
+
+    .an-content-left-group-item {
+      position: relative;
+
+      .title {
+        height: 100px;
+        position: absolute;
+        width: 100%;
+        bottom: 23px;
+        color: #fff;
+        font-size: 30;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
   }
 }
 
