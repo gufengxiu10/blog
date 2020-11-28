@@ -29,8 +29,8 @@ import { Options, Vue } from "vue-class-component";
 import { defineComponent, PropType } from "vue";
 @Options({
   props: Object.assign(defineComponent({}), {
-    num: Boolean,
-  }),
+    num: Boolean
+  })
 })
 export default class Nav extends Vue {
   protected isShow = false;
@@ -47,20 +47,20 @@ export default class Nav extends Vue {
 
   protected nav = [
     {
-      name: "Active",
+      name: "Active"
     },
     {
-      name: "Active",
+      name: "Active"
     },
     {
-      name: "Active",
+      name: "Active"
     },
     {
-      name: "Active",
+      name: "Active"
     },
     {
-      name: "Active",
-    },
+      name: "Active"
+    }
   ];
 }
 </script>

@@ -1,7 +1,11 @@
 <template>
   <div>
     <layout>
-      <div class="anng-group-item">
+      <div
+        class="anng-group-item bg-white shadow"
+        v-for="index of 10"
+        :key="index"
+      >
         <div class="item-img">
           <img
             class="img-fluid"
@@ -9,15 +13,28 @@
           />
         </div>
         <div class="info">
-          <div>哔哔！换个姿势在静态博客上发短博文（volantis适配版）</div>
-          <div>本文教你如何用微信在Hexo上发表类似于说说的短博文。</div>
+          <h2 class="info-title">
+            哔哔！换个姿势在静态博客上发短博文（volantis适配版）
+          </h2>
+          <div class="info-small">
+            本文教你如何用微信在Hexo上发表类似于说说的短博文。
+          </div>
         </div>
         <a-divider />
         <div class="user">
-          <span>
-            <FieldTimeOutlined :style="{ fontSize: '20px' }" />2020-10-09
+          <span class="user-avatar">
+            <img
+              src="https://pc-index-skin.cdn.bcebos.com/hiphoto/66011955477.jpg"
+            />
           </span>
-          <span>-进阶玩法</span>
+          <span class="user-item-icon">
+            <FieldTimeOutlined :style="{ fontSize: '20px' }" />
+          </span>
+          <span class="user-item-text"> 2020-11-11 </span>
+          <span class="user-item-icon">
+            <ContainerOutlined :style="{ fontSize: '20px' }" />
+          </span>
+          <span class="user-item-text">进阶玩法</span>
         </div>
       </div>
     </layout>
@@ -31,6 +48,7 @@ import {
   TagsOutlined,
   UserOutlined,
   FieldTimeOutlined,
+  ContainerOutlined
 } from "@ant-design/icons-vue";
 
 @Options({
@@ -39,21 +57,65 @@ import {
     TagsOutlined,
     UserOutlined,
     FieldTimeOutlined,
-  }),
+    ContainerOutlined
+  })
 })
 export default class Index extends Vue {}
 </script>
 <style lang="scss" scoped>
 .anng-group-item {
-  display: box;
+  margin-bottom: 20px;
+  border-radius: 10px 10px 0 0;
+  transition: ;
   img {
     width: 100%;
     height: 300px;
     object-fit: cover;
+    border-radius: 10px 10px 0 0;
   }
 
   .user {
+    height: 50px;
+
     display: flex;
+
+    .user-avatar {
+      padding-left: 20px;
+      margin-bottom: 10px;
+      margin-right: 20px;
+      img {
+        width: 24px !important;
+        height: 24px !important;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    .user-item-icon {
+      line-height: 21px !important;
+      margin-right: 5px;
+    }
+
+    .user-item-text {
+      line-height: 27px !important;
+      margin-right: 10px;
+    }
+  }
+
+  .info {
+    color: #000;
+    .info-title {
+      font-size: 25px;
+      font-weight: 400;
+      margin-top: 10px;
+      padding-left: 10px;
+      line-height: 50px;
+    }
+
+    .info-small {
+      padding-left: 10px;
+      margin-top: 5px;
+    }
   }
 }
 </style>
