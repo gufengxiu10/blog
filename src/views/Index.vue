@@ -66,12 +66,18 @@ export default class Index extends Vue {}
 .anng-group-item {
   margin-bottom: 20px;
   border-radius: 10px 10px 0 0;
-  transition: ;
+  // transition: ;
+
   img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
+    transition: all 0.6s;
+    z-index: 9999;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .user {

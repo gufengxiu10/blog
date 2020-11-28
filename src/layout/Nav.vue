@@ -34,17 +34,6 @@ import { defineComponent, PropType } from "vue";
 })
 export default class Nav extends Vue {
   protected isShow = false;
-
-  mounted() {
-    window.addEventListener("scroll", this.te, true);
-  }
-
-  te() {
-    const scrollTop =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    this.isShow = scrollTop == 0 ? false : true;
-  }
-
   protected nav = [
     {
       name: "Active"
@@ -62,6 +51,16 @@ export default class Nav extends Vue {
       name: "Active"
     }
   ];
+
+  mounted() {
+    window.addEventListener("scroll", this.te, true);
+  }
+
+  te() {
+    const scrollTop =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    this.isShow = scrollTop == 0 ? false : true;
+  }
 }
 </script>
 <style lang="scss" scoped>

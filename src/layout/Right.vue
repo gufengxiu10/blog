@@ -109,7 +109,8 @@ $itemHide: 300px;
   min-height: $minHeight;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 45px;
+  z-index: 0;
   > div {
     margin-bottom: 10px;
   }
