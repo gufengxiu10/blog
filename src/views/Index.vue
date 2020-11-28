@@ -75,9 +75,6 @@ export default class Index extends Vue {}
     border-radius: 10px 10px 0 0;
     transition: all 0.6s;
     z-index: 9999;
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 
   .user {
