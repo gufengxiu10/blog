@@ -5,21 +5,6 @@
         <li class="nav-item" v-for="item in nav" :key="item">
           <a class="nav-link" href="#">{{ item.name }}</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link disabled"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            >Disabled</a
-          >
-        </li> -->
       </div>
     </nav>
   </div>
@@ -36,19 +21,16 @@ export default class Nav extends Vue {
   protected isShow = false;
   protected nav = [
     {
-      name: "Active"
+      name: "首页"
     },
     {
-      name: "Active"
+      name: "相册"
     },
     {
-      name: "Active"
+      name: "音乐"
     },
     {
-      name: "Active"
-    },
-    {
-      name: "Active"
+      name: "关于"
     }
   ];
 

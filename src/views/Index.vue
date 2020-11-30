@@ -22,19 +22,24 @@
         </div>
         <a-divider />
         <div class="user">
-          <span class="user-avatar">
-            <img
-              src="https://pc-index-skin.cdn.bcebos.com/hiphoto/66011955477.jpg"
-            />
-          </span>
-          <span class="user-item-icon">
-            <FieldTimeOutlined :style="{ fontSize: '20px' }" />
-          </span>
-          <span class="user-item-text"> 2020-11-11 </span>
-          <span class="user-item-icon">
-            <ContainerOutlined :style="{ fontSize: '20px' }" />
-          </span>
-          <span class="user-item-text">进阶玩法</span>
+          <div>
+            <span class="user-avatar">
+              <img
+                src="https://pc-index-skin.cdn.bcebos.com/hiphoto/66011955477.jpg"
+              />
+            </span>
+            <span class="user-item-icon">
+              <FieldTimeOutlined :style="{ fontSize: '20px' }" />
+            </span>
+            <span class="user-item-text"> 2020-11-11 </span>
+            <span class="user-item-icon">
+              <ContainerOutlined :style="{ fontSize: '20px' }" />
+            </span>
+            <span class="user-item-text">进阶玩法</span>
+          </div>
+          <div class="user-right">
+            <span class="user-item-icon"><ArrowRightOutlined /></span>
+          </div>
         </div>
       </div>
     </layout>
@@ -48,7 +53,8 @@ import {
   TagsOutlined,
   UserOutlined,
   FieldTimeOutlined,
-  ContainerOutlined
+  ContainerOutlined,
+  ArrowRightOutlined
 } from "@ant-design/icons-vue";
 
 @Options({
@@ -57,7 +63,8 @@ import {
     TagsOutlined,
     UserOutlined,
     FieldTimeOutlined,
-    ContainerOutlined
+    ContainerOutlined,
+    ArrowRightOutlined
   })
 })
 export default class Index extends Vue {}
@@ -81,7 +88,7 @@ export default class Index extends Vue {}
     height: 50px;
 
     display: flex;
-
+    justify-content: space-between;
     .user-avatar {
       padding-left: 20px;
       margin-bottom: 10px;
@@ -102,6 +109,10 @@ export default class Index extends Vue {}
     .user-item-text {
       line-height: 27px !important;
       margin-right: 10px;
+    }
+
+    .user-right {
+      margin-right: 35px;
     }
   }
 

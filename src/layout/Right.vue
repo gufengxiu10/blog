@@ -1,9 +1,12 @@
 <template>
   <div class="an-content-right" ref="anngContent">
-    <a-card class="shadow an-content-item-1">
-      <img class="img-thumbnail" src="@/assets/avater/1.jpg" />
-      <p>title</p>
-      <div class="item-1-content">
+    <a-card class="shadow anng-info">
+      <div class="info-bg"></div>
+      <div class="info-avatar">
+        <img class="img-thumbnail" src="@/assets/avater/1.jpg" />
+        <h3>ANNG</h3>
+      </div>
+      <!-- <div class="item-1-content">
         <GithubOutlined
           :style="{
             fontSize: '30px',
@@ -25,7 +28,7 @@
             height: '50px'
           }"
         />
-      </div>
+      </div> -->
     </a-card>
     <a-card title="最新文章" class="shadow">
       <div class="new-article-group" v-for="index of 5" :key="index">
@@ -45,24 +48,26 @@
         </a>
       </div>
     </a-card>
-    <a-card title="文章分类" class="shadow">
-      <div class="d-flex flex-row bd-highlight mb-3">
-        <div class="p-2 bd-highlight">PHP</div>
-        <div class="p-2 bd-highlight">VUE</div>
-        <div class="p-2 bd-highlight">Laravel</div>
+    <a-card title="文章分类" class="shadow anng-cate">
+      <div class="cate-item" v-for="index of 5" :key="index">
+        <div class="name">PHP</div>
+        <div class="num">(10)</div>
       </div>
     </a-card>
-    <a-card title="标签" class="shadow tag">
-      <div class="d-flex flex-row bd-highlight mb-3">
-        <div class="anng-text p-2 bd-highlight">
-          <a href="javascript:;">PHP</a>
-        </div>
-        <div class="anng-text p-2 bd-highlight">
-          <a href="javascript:;">VUE</a>
-        </div>
-        <div class="anng-text p-2 bd-highlight">
-          <a href="javascript:;">Laravel</a>
-        </div>
+    <a-card title="标签" class="shadow anng-tag">
+      <div class="tag-item">
+        <a>Php</a>
+        <a>Java</a>
+        <a>Python</a>
+        <a>GoLang</a>
+        <a>Php</a>
+        <a>Java</a>
+        <a>Python</a>
+        <a>GoLang</a>
+        <a>Php</a>
+        <a>Java</a>
+        <a>Python</a>
+        <a>GoLang</a>
       </div>
     </a-card>
   </div>
@@ -86,21 +91,7 @@ import {
     {}
   )
 })
-export default class Right extends Vue {
-  mounted() {
-    window.addEventListener("scroll", this.ku, true);
-  }
-
-  ku() {
-    const scrollTop =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    const anngContent: any = this.$refs.anngContent;
-    if (scrollTop >= anngContent["offsetHeight"]) {
-      //   anngContent.style.position = "sticky";
-      //   anngContent.style.top = "0";
-    }
-  }
-}
+export default class Right extends Vue {}
 </script>
 <style lang="scss" scoped>
 $minHeight: 1000px;
@@ -110,38 +101,77 @@ $itemHide: 300px;
   position: -webkit-sticky;
   position: sticky;
   top: 45px;
+  border-radius: 10px;
   z-index: 0;
   > div {
     margin-bottom: 10px;
   }
 
-  .an-content-item-1 {
+  .anng-info {
     text-align: center;
-    img {
-      height: 100px;
-      width: 100px;
-      overflow: hidden;
-      margin: 0 auto;
-    }
+    position: relative;
+    z-index: 2;
+    border-radius: 10px 10px 0 0;
 
-    .item-1-content {
+    .info-bg {
+      position: absolute;
+      border-radius: 10px 10px 0 0;
       width: 100%;
+      top: 0;
+      left: 0;
+      height: 100px;
+      z-index: -1;
+      padding: 0px;
+      background-image: url(~@/assets/images/bg4.jpg);
+      background-size: cover;
+    }
+
+    .info-avatar {
+      margin-top: 20px;
+      display: flex;
+      img {
+        height: 100px;
+        width: 100px;
+        overflow: hidden;
+        margin: 0 auto;
+        z-index: 2;
+      }
+
+      h3 {
+        padding-top: 60px;
+      }
+    }
+
+    .info-article {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
     }
   }
 
-  .an-content-item-2 {
-    margin-bottom: 10px;
-    height: $itemHide;
+  .anng-cate {
+    .cate-item {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
-  .an-content-item-3 {
-    margin-bottom: 10px;
-    height: $itemHide;
-  }
-
-  .an-content-item-4 {
-    margin-bottom: 10px;
-    height: $itemHide;
+  .anng-tag {
+    .tag-item {
+      display: flex;
+      margin: 5px;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      a {
+        padding: 3px;
+        text-align: center;
+        margin-bottom: 10px;
+        height: 30px;
+        &:hover {
+          border-bottom: 2px solid #333;
+        }
+      }
+    }
   }
 }
 
@@ -185,15 +215,15 @@ $itemHide: 300px;
   }
 }
 
-.tag {
-  .d-flex {
-    > .anng-text {
-      a {
-        padding: 10px;
-        border: 2px solid #333;
-        border-radius: 21px;
-      }
-    }
+.info-article-cate {
+  // display: flex;
+  columns: 3;
+  div {
+    padding: 5px;
+    border: 1px solid #333;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 20px;
   }
 }
 </style>
