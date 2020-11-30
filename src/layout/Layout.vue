@@ -2,7 +2,9 @@
   <div class="content">
     <nav-layout></nav-layout>
     <article class="top">
-      <div class="baranan-two"></div>
+      <slot name="braan">
+        <div class="baranan-two"></div>
+      </slot>
     </article>
     <article class="container an-content">
       <slot name="anng-content">
@@ -30,26 +32,26 @@ import RightLayout from "./Right.vue";
 import {
   GithubOutlined,
   QqOutlined,
-  TwitterOutlined
+  TwitterOutlined,
 } from "@ant-design/icons-vue";
 
 @Options({
   components: defineComponent({
     RightLayout,
     NavLayout,
-    MinTopLayout
-  })
+    MinTopLayout,
+  }),
 })
 export default class Layout extends Vue {
   private bg = [
     "@/assets/images/bg1.jpg",
     "@/assets/images/bg2.jpg",
     "@/assets/images/bg3.jpg",
-    "@/assets/images/bg4.jpg"
+    "@/assets/images/bg4.jpg",
   ];
 }
 </script>
-<style lang="scss" >
+<style lang="scss">
 * {
   a {
     text-decoration: none;
