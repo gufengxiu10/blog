@@ -3,7 +3,9 @@
     <nav class="shadow bg-white" v-show="isShow">
       <div class="nav container">
         <li class="nav-item" v-for="item in nav" :key="item">
-          <a class="nav-link" href="#">{{ item.name }}</a>
+          <router-link :to="item.url">
+            {{ item.name }}
+          </router-link>
         </li>
       </div>
     </nav>
@@ -21,16 +23,20 @@ export default class Nav extends Vue {
   protected isShow = false;
   protected nav = [
     {
-      name: "首页"
+      name: "首页",
+      url: ""
     },
     {
-      name: "相册"
+      name: "相册",
+      url: "/photo"
     },
     {
-      name: "音乐"
+      name: "音乐",
+      url: ""
     },
     {
-      name: "关于"
+      name: "关于",
+      url: ""
     }
   ];
 

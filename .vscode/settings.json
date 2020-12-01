@@ -1,0 +1,16 @@
+{
+    "vetur.format.defaultFormatterOptions": {
+        "js-beautify-html": {
+            "wrap_attributes": "force-aligned",
+            "wrap_line_length": 200,
+            "end_with_newline": false,
+            "semi": true,
+            "singleQuote": true
+        },
+        "prettier": {
+            "semi": true,
+            "singleQuote": false,
+            "trailingComma": "none"
+        }
+    }
+}

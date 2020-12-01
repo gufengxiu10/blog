@@ -7,6 +7,7 @@ import "ant-design-vue/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 
+
 createApp(App)
   .use(store)
   .use(Antd)
