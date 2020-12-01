@@ -2,8 +2,8 @@
   <div>
     <layout>
       <div class="photo-group">
-        <div class="photo-item" v-for="index of 20" :key="index">
-          <router-link to="/photo/10" class="photo-body">
+        <div class="photo-item" v-for="index of 10" :key="index">
+          <router-link to="/" class="photo-body">
             <img
               src="https://pc-index-skin.cdn.bcebos.com/hiphoto/66011955477.jpg"
             />
@@ -20,22 +20,10 @@
 import { Options, Vue } from "vue-class-component";
 import { defineComponent } from "vue";
 import Layout from "@/layout/Layout.vue";
-import {
-  TagsOutlined,
-  UserOutlined,
-  FieldTimeOutlined,
-  ContainerOutlined,
-  ArrowRightOutlined,
-} from "@ant-design/icons-vue";
 
 @Options({
   components: defineComponent({
     Layout,
-    TagsOutlined,
-    UserOutlined,
-    FieldTimeOutlined,
-    ContainerOutlined,
-    ArrowRightOutlined,
   }),
 })
 export default class Detail extends Vue {

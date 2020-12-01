@@ -3,7 +3,7 @@ import Home from "../views/Home.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/:id",
+    path: "/:id(\\d+)?",
     name: "detail",
     component: () => import("@/views/Detail.vue")
   },
@@ -11,6 +11,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "index",
     component: () => import("@/views/Index.vue")
+  },
+  {
+    path: "/photo/:id(\\d+)",
+    name: "PhotoDetail",
+    component: () => import("@/views/PhotoDetail.vue")
   },
   {
     path: "/photo",
